@@ -1,0 +1,37 @@
+{% extends 'vehiculos/base.html' %}
+{% load static %}
+
+
+
+{% block titulo %}
+    Sobre Mi
+{% endblock titulo %}
+  
+
+
+{% block contenido %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Acerca de mí</title>
+</head>
+<body>
+    <header>
+        <h1 class="row justify-content-center mt-5">Franco Figliozzi</h1>
+    </header>
+    <main>
+        <section class="about-me">
+            <p class="row justify-content-center mt-5" style="color:black">
+                soy Ingeniero Civil graduado en la Universidad Nacional de La Plata. <br>
+                Me especializo en el estudio técnico/económico de proyectos de gran envergadura, <br>
+                como tambien en el managment del mismo. <br>
+                Decidí realizar el curso simplemente por curiosidad. En estos 2 meses, <br>
+                logre aprender las bases de la programación, sin duda alguna me resta mucho por aprender, <br>
+                creo que con el tiempo y la practica (en mis tiempos libres tratare de mejorar mi app) lo lograre! <br>
+            </p>
+        </section>
+    </main>
+</body>
+</html>
+{% endblock contenido %} 

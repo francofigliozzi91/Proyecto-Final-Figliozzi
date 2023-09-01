@@ -1,0 +1,33 @@
+{% extends 'vehiculos/base.html' %}
+{% load static %}
+
+
+
+{% block titulo %}
+   Buscar Autos
+{% endblock titulo %}
+  
+
+
+{% block contenido %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-lg-5">
+            <div class="card ">
+                <div class="card-header text-center" >
+                    Buscar autos por marca:
+                </div>
+                <div class="card-body text-center">
+                  <form action="/buscar2" method="get">
+                     {% csrf_token %}
+                     <p>Marca de Autos a Buscar: <input type="text" name="buscar" id="buscar"></p>
+                     <input type="submit" value="Enviar">
+                </form>   
+                </div>
+                <div class="card-footer">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock contenido %}

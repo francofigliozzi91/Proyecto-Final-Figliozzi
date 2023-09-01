@@ -1,0 +1,56 @@
+{% extends 'vehiculos/base.html' %}
+{% load static %}
+
+
+
+{% block titulo %}
+    Registro de Camionetas
+{% endblock titulo %}
+ 
+
+
+{% block contenido %}
+<table>
+    <tr>
+        <td width="200"><h2>Camionetas</h2></td>
+        <td>
+            <a 
+            href="{% url 'create_camionetas' %}"
+            class="btn btn-primary btn-sm"
+            ><i class="fa fa-plus fa-lg" title="New Record"></i>
+            </a>
+        </td>
+    </tr>
+</table>
+<div class="container">
+    <div class="row justify-content-center mt-5"> 
+        {% for camioneta in camionetas_list  %}  
+                <div class="col-lg-4 mt-5">
+                    <div class="card ">
+                        <div class="card-header text-center" >
+                            <h3 class="bolder">{{ camioneta.marca}} - {{ camioneta.modelo}}</h3>
+                        </div>
+                        <div class="card-body text-center">
+                            <p style="font-size: large">Color: {{ camioneta.color }}</p>
+                            <p style="font-size: large">Precio (U$D): {{ camioneta.precio }}</p>
+                        </div>
+                        <div class="card-footer">
+                            <a 
+                                href="{% url 'update_camionetas' camioneta.id %}"
+                                class="btn btn-primary"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+                            </a>
+                            <a 
+                                href="{% url 'delete_camionetas' camioneta.id %}"
+                                class="btn btn-danger"
+                                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                                ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock contenido %}
